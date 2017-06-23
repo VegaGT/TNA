@@ -26,7 +26,6 @@ public class ScoreListService {
 		ScoreListMapper scoreListMapper = session.getMapper(ScoreListMapper.class);
 		
 		List<Score> scores = new ArrayList<Score>();
-		scores = ScoreListMapper.select(uid);
 		return scores;
 	}
 }
