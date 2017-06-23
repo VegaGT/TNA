@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+
+    <typeAliases>
+        <typeAlias alias="user" type="com.oracle.tna.domain.User" />
+        <typeAlias alias="score" type="com.oracle.tna.domain.Score" />
+        <typeAlias alias="item" type="com.oracle.tna.domain.Item" />
+    </typeAliases>
+
+    <environments default="simple">
+        <environment id="simple">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://localhost:3306/tna" />
+                <property name="username" value="root" />
+                <property name="password" value="root" />
+            </dataSource>
+        </environment>
+    </environments>
+    
+    <mappers>
+        <mapper resource="com/oracle/tna/user/dao/LoginMapper.xml" />
+        <mapper resource="com/oracle/tna/user/dao/RegistrationMapper.xml" />
+    </mappers>
+</configuration>
