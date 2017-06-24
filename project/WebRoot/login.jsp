@@ -69,9 +69,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<input type="hidden" name="id" value="bfdba52708">
 							<div class="form-group">
 								<input class="form-control input-lg" name="username" id="name" value="${param.username}" type="text" placeholder="用户名" required>
+								<div class="tip">${uError}</div>
 							</div>
 							<div class="form-group">
 								<input class="form-control input-lg" name="password" id="email" type="password" placeholder="密码" required>
+								<div class="tip">${pError}</div>
 							</div>
 							<div class="form-group last">
 								<input type="submit" class="btn" value="登录">

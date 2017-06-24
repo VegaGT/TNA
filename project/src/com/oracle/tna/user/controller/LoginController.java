@@ -25,19 +25,27 @@ public class LoginController {
 	@RequestMapping("/login.do")
 	public String login(Model model, HttpSession session,
 			String username, String password){
-		Map<String, String> errors = new HashMap<String, String>();
 		User user = loginService.getUser(username, password);
-		//登录失败
+		//锟斤拷录失锟斤拷
 		if(user == null){
-			model.addAttribute("errors", errors);
+			model.addAttribute("uError", "用户名不存在");
 			return "login";
 		}
-		//登录成功
-		session.setAttribute("user", user);
-		if(user.getAdmintype() == 0){
-			return "redirect:/user/main.jsp";
-		} else{
-			return "redirect:/admin/main.jsp";
+		if(!user.getPassword().equals(password))
+		{
+			model.addAttribute("pError", "密码不正确");
+			return "login";
 		}
+		
+		else {
+			session.setAttribute("user", user);
+			if(user.getAdmintype() == 0){
+				return "redirect:/user/main.jsp";
+			} else{
+				return "redirect:/admin/main.jsp";
+			}
+		}
+		
+	
 	}
 }
