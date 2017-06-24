@@ -21,7 +21,7 @@ public RegistrationService registrationService = RegistrationService.getRegistra
 	public String login(Model model,String username,HttpSession session){
 		if(!registrationService.userIsExisted(username))
 		{
-			errors.put("usernameE", "¸ÃÓÃ»§ÃûÒÑ±»Ê¹ÓÃ");
+			errors.put("usernameE", "è¯¥ç”¨æˆ·åå·²å­˜åœ¨");
 			model.addAttribute("errors",errors);
 			return "registration";
 			

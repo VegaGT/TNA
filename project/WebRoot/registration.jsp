@@ -69,7 +69,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="tip">${errors["usernameE"]}</div>
 							</div>
 							<div class="form-group">
-								<input class="form-control input-lg" name="password"  type="password" placeholder="密码" required>
+								<input class="form-control input-lg" maxlength="12"  name="password"  type="password" placeholder="密码" required>
 							</div>
 							<div class="form-group">
 								<input class="form-control input-lg" name="okpassword"  type="password" placeholder="确认密码" required>
