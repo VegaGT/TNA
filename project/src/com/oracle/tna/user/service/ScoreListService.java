@@ -8,6 +8,7 @@ import mybatis.MybatisUtil;
 import org.apache.ibatis.session.SqlSession;
 
 import com.oracle.tna.domain.Score;
+import com.oracle.tna.domain.ScoreListItem;
 import com.oracle.tna.domain.User;
 import com.oracle.tna.user.dao.LoginMapper;
 import com.oracle.tna.user.dao.ScoreListMapper;
@@ -17,15 +18,16 @@ public class ScoreListService {
 	
 	private ScoreListService(){}
 	
-	public static ScoreListService getLoginService(){
+	public static ScoreListService getScoreListService(){
 		return scoreListService;
 	}
 	
-	public List<Score> getScoreList(int uid) {
+	public List<ScoreListItem> getScoreList(int uid) {
 		SqlSession session = MybatisUtil.getSqlSession(true);
 		ScoreListMapper scoreListMapper = session.getMapper(ScoreListMapper.class);
 		
-		List<Score> scores = new ArrayList<Score>();
+		List<ScoreListItem> scores = new ArrayList<ScoreListItem>();
+		scores = scoreListMapper.select(uid);
 		return scores;
 	}
 }

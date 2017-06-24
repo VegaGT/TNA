@@ -6,7 +6,7 @@
 
 	
 	<select id="select" resultType="score">
-		select * from score where USRE_ID = #{uid}
+		select data,sum(score) from score where USRE_ID = #{uid} group by data
 	</select>
 
 </mapper>

@@ -26,7 +26,13 @@ public class LoginService {
 		
 		User user = new User();
 		user = loginMapper.select(username);
-		return user;
+		if(password.trim().equals(user.getPassword().trim())){
+			return user;
+		}
+
+		else{
+			return null;
+		}
 	}
 
 }
