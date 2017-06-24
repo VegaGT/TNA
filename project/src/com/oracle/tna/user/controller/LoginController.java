@@ -28,12 +28,16 @@ public class LoginController {
 		User user = loginService.getUser(username, password);
 		//锟斤拷录失锟斤拷
 		if(user == null){
+
 			model.addAttribute("uError", "用户名不存在");
+
 			return "login";
 		}
 		if(!user.getPassword().equals(password))
 		{
+
 			model.addAttribute("pError", "密码不正确");
+
 			return "login";
 		}
 		
