@@ -58,12 +58,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </li> 
 					 
 					 <li>
-                        <a href="user/.jsp"><i class="fa fa-pencil"></i> 考试记录</a>
+                        <a href="admin/scoreList.jsp"><i class="fa fa-pencil"></i> 考试记录</a>
                         
 						</li>	
 							
                     <li>
-                        <a href="user/libManagement.jsp"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> 题库管理</a>
+                        <a href="admin/libManagement.jsp"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> 题库管理</a>
                     </li>
                     
                    

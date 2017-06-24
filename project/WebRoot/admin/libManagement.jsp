@@ -53,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </li> 
 					 
 					 <li>
-                        <a href="user/scoreList.jsp"><i class="fa fa-pencil"></i> 考试记录</a>
+                        <a href="admin/scoreList.jsp"><i class="fa fa-pencil"></i> 考试记录</a>
                         
 						</li>	
 							
@@ -67,7 +67,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
-		  
+		    <div class="header"> 
+                        <h1 class="page-header">
+                        </h1>						
+		</div>
 		
             <div id="page-inner"> 
                        

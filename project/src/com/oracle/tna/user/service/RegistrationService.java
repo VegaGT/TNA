@@ -6,12 +6,14 @@ import mybatis.MybatisUtil;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.oracle.tna.domain.User;
 import com.oracle.tna.user.dao.RegistrationMapper;
 
 public class RegistrationService {
 	
 	public static RegistrationService registrationService=new RegistrationService();
-	
+	private SqlSession session;
+	private RegistrationMapper registrationMapper;
 	public static RegistrationService getRegistrationService()
 	{
 		return registrationService;
@@ -19,10 +21,11 @@ public class RegistrationService {
 	
 	public boolean userIsExisted(String username)
 	{
-		SqlSession session = MybatisUtil.getSqlSession(true);
-		RegistrationMapper registrationMapper= session.getMapper(RegistrationMapper.class);
+		session = MybatisUtil.getSqlSession(true);
+		registrationMapper= session.getMapper(RegistrationMapper.class);
 		
 		List<String> usernames=registrationMapper.getUsername();
+		session.close();
 		for(String u:usernames)
 		{
 			if(username.equals(u))
@@ -31,6 +34,14 @@ public class RegistrationService {
 			}
 		}
 		return true;
+	}
+	
+	public void register(User user)
+	{
+		session = MybatisUtil.getSqlSession(true);
+		registrationMapper= session.getMapper(RegistrationMapper.class);
+		registrationMapper.addUser(user);
+		session.close();		
 	}
 	
 //	public static void main(String args[])
