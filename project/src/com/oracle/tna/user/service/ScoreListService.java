@@ -22,12 +22,17 @@ public class ScoreListService {
 		return scoreListService;
 	}
 	
-	public List<ScoreListItem> getScoreList(int uid) {
+	public List<Score> getScoreList(int uid) {
 		SqlSession session = MybatisUtil.getSqlSession(true);
 		ScoreListMapper scoreListMapper = session.getMapper(ScoreListMapper.class);
 		
-		List<ScoreListItem> scores = new ArrayList<ScoreListItem>();
+		List<Score> scores = new ArrayList<Score>();
 		scores = scoreListMapper.select(uid);
 		return scores;
+	}
+	
+	public static void main(String[] args) {
+		List<Score> scores=getScoreListService().getScoreList(2);
+		System.out.println("service"+scores.size());
 	}
 }

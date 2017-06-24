@@ -6,5 +6,5 @@ import com.oracle.tna.domain.Score;
 import com.oracle.tna.domain.ScoreListItem;
 
 public interface ScoreListMapper {
-	public List<ScoreListItem> select(int uid);
+	public List<Score> select(int uid);
 }

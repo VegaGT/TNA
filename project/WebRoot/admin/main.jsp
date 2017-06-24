@@ -51,22 +51,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu" href="user/main.jsp"><i class="fa fa-desktop"></i> 首页</a>
+                        <a class="active-menu" href="admin/main.jsp"><i class="fa fa-desktop"></i> 首页</a>
                     </li>
                     <li>
-                        <a href="user/personalInfo.jsp"><i class="fa fa-user"></i> 个人信息</a>
+                        <a href="admin/userList.jsp"><i class="fa fa-user"></i> 用户列表</a>
                     </li> 
 					 
 					 <li>
-                        <a href="user/exam.jsp"><i class="fa fa-pencil"></i> 参加考试</a>
+                        <a href="user/.jsp"><i class="fa fa-pencil"></i> 考试记录</a>
                         
 						</li>	
 							
                     <li>
-                        <a href="user/scoreList.jsp"><i class="fa fa-list"></i> 考试记录</a>
+                        <a href="user/libManagement.jsp"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> 题库管理</a>
                     </li>
                     
-               
+                   
                   
                 </ul>
 

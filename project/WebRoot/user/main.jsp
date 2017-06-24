@@ -63,7 +63,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</li>	
 							
                     <li>
-                        <a href="user/scoreList.jsp"><i class="fa fa-list"></i> 考试记录</a>
+                        <a href="showScoreList.do"><i class="fa fa-list"></i> 考试记录</a>
                     </li>
                     
                
