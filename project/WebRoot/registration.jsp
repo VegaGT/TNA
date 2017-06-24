@@ -66,24 +66,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<input type="hidden" name="id" value="bfdba52708">
 							<div class="form-group">
 								<input class="form-control input-lg" name="username" value="${param.username}" type="text" placeholder="用户名" required>
-								<div class="tip">${errors["usernameE"]}</div>
+								<div class="tip">${usernameE}</div>
 							</div>
 							<div class="form-group">
-								<input class="form-control input-lg" maxlength="12"  name="password"  type="password" placeholder="密码" required>
+								<input class="form-control input-lg" maxlength="12"  name="password" value="${param.password}"  type="password" placeholder="密码不能少于6位" required>
+								<div class="tip">${passwordE}</div>
 							</div>
 							<div class="form-group">
-								<input class="form-control input-lg" name="okpassword"  type="password" placeholder="确认密码" required>
+								<input class="form-control input-lg" maxlength="12" name="okpassword"  value="${param.okpassword}" type="password" placeholder="确认密码" required>
+								<div class="tip">${okE}</div>
 							</div>
 							<div class="form-group">
-								<input class="form-control input-lg" name="realnmae"  type="text" placeholder="真实姓名" required>
+								<input class="form-control input-lg" name="name" value="${param.name}" type="text" placeholder="真实姓名" required>
 							</div>
 							<div class="form-group">
-								<input class="form-control input-lg" name="id"  type="text" maxlength="18"
+								<input class="form-control input-lg" name="idno" value="${param.idno}" type="text" maxlength="18"
 								onKeypress="if(event.keyCode<48||event.keyCode>57)event.returnValue=false;" placeholder="身份证号" required>
 							</div>
 							<div class="form-group">
-								<input class="form-control input-lg" name="phone"  type="text" maxlength="11"
+								<input class="form-control input-lg" name="phone" value="${param.phone}" type="text" maxlength="11"
 								onKeypress="if(event.keyCode<48||event.keyCode>57)event.returnValue=false;" placeholder="联系电话" required>
+								<div class="tip">${phoneE}</div>
 							</div>
 							<div class="form-group last">
 								<input type="submit" class="btn" value="注册">

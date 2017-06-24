@@ -68,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<input type="hidden" name="u" value="503bdae81fde8612ff4944435">
 						<input type="hidden" name="id" value="bfdba52708">
 							<div class="form-group">
-								<input class="form-control input-lg" name="username" id="name" type="text" placeholder="用户名" required>
+								<input class="form-control input-lg" name="username" id="name" value="${param.username}" type="text" placeholder="用户名" required>
 							</div>
 							<div class="form-group">
 								<input class="form-control input-lg" name="password" id="email" type="password" placeholder="密码" required>
@@ -76,7 +76,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="form-group last">
 								<input type="submit" class="btn" value="登录">
 							</div>
-							<p class="privacy text-center"> <a href="privacy.html">注册新用户</a></p>
+							<p class="privacy text-center"> <a href="registration.jsp">注册新用户</a></p>
 						</form>
 					</div>				
 				
