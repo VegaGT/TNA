@@ -63,7 +63,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</li>	
 							
                     <li>
-                        <a href="admin/libManagement.jsp"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> 题库管理</a>
+                        <a href="displayItems"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> 题库管理</a>
                     </li>
                     
                    

@@ -28,5 +28,6 @@
         <mapper resource="com/oracle/tna/user/dao/LoginMapper.xml" />
         <mapper resource="com/oracle/tna/user/dao/RegistrationMapper.xml" />
         <mapper resource="com/oracle/tna/user/dao/ScoreListMapper.xml" />
+        <mapper resource="com/oracle/tna/admin/dao/ItemMapper.xml" />
     </mappers>
 </configuration>
