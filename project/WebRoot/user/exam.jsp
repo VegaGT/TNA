@@ -61,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</li>	
 							
                     <li>
-                        <a href="user/scoreList.jsp"><i class="fa fa-list"></i> 考试记录</a>
+                        <a href="showScoreList.do"><i class="fa fa-list"></i> 考试记录</a>
                     </li>
                   
                 </ul>
@@ -70,7 +70,55 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      </nav>
   </div>
   <div id="page-wrapper">
-  		  
+    <div class="header"> 
+                        <h7 class="page-header">
+                           
+                        </h7>
+                        </div>
+  <div id="page-inner">
+  		  <div class="row">
+                        <div class="col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="card-title">
+                                        <div class="title">开始考试</div>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                  
+                                    
+                                    <div><div class="alert alert-warning">
+									1. JDK的构成中不包含以下哪个部分？  
+									
+									<div class="radio3">
+                                          <input type="radio" id="radio1" name="radio1" value="option1">
+                                          <label for="radio1">
+                                           A. Java编程语言
+                                          </label>
+                                        </div>
+									<div class="radio3">
+                                          <input type="radio" id="radio2" name="radio1" value="option2">
+                                          <label for="radio2">
+                                             B. 工具及工具的API
+                                          </label>
+                                        </div>
+									
+                                        <div class="radio3">
+                                          <input type="radio" id="radio3" name="radio1" value="option3">
+                                          <label for="radio3">
+                                             C. Java EE扩展API
+                                          </label>
+                                        </div>
+                                        
+                                       <div class="radio3">
+                                          <input type="radio" id="radio4" name="radio1" value="option4">
+                                          <label for="radio3">
+                                             D. Java平台虚拟机 
+                                          </label>
+                                        </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-default"><a href="user/showScore.jsp">交卷</a></button>
+                                        
   </div>
 
           

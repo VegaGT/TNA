@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -52,11 +52,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         <a  href="admin/main.jsp"><i class="fa fa-desktop"></i> 首页</a>
                     </li>
                     <li>
-                        <a  class="active-menu" href="admin/userList.jsp"><i class="fa fa-user"></i> 用户列表</a>
+                        <a  class="active-menu" href="showUserList.do"><i class="fa fa-user"></i> 用户列表</a>
                     </li> 
 					 
 					 <li>
-                        <a href="admin/scoreList.jsp"><i class="fa fa-pencil"></i> 考试记录</a>
+                        <a href="showAdminScoreList.do"><i class="fa fa-pencil"></i> 考试记录</a>
                         
 						</li>	
 							
@@ -72,7 +72,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div id="page-wrapper">
   <div class="header"> 
                         <h1 class="page-header">
-                           <small>当前共计：20人</small>
+                           <small>当前共计：${requestScope.countOfUsers }人</small>
                         </h1>
 			
 									
@@ -97,155 +97,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="odd gradeX">
-                                            <td >1</td>
-                                            <td>zhangsan</td>
-                                            <td>张三</td>
-                                            <td>141041014104047777</td>
-                                            <td>18772673636</td>     
-                                        </tr>
-                                        <tr class="even gradeC">
-                                            <td>2</td>
-                                            <td>Internet Explorer 5.0</td>
-                                            <td>Win 95+</td>
-                                            <td>141041014104047778</td>
-                                            <td>15625354545</td>
-                                        </tr>
-                                        <tr class="odd gradeA">
-                                            <td>3</td>
-                                            <td>Internet Explorer 5.5</td>
-                                            <td>Win 95+</td>
-                                            <td>141021014104047777</td>
-                                            <td>17767563909</td>
-                                        </tr>
-                                        <tr class="even gradeA">
-                                            <td>4</td>
-                                            <td>Internet Explorer 6</td>
-                                            <td>Win 98+</td>
-                                            <td>141041004104047777</td>
-                                            <td>18878672511</td>
-                                        </tr>
-                                        <tr class="odd gradeA">
-                                            <td>5</td>
-                                            <td>Internet</td>
-                                            <td>Win XP SP2+</td>
-                                            <td>111041004104047777</td>
-                                            <td>12378672511</td>
-                                        </tr>
-                                        <tr class="even gradeA">
-                                            <td>6</td>
-                                            <td>AOL browser (AOL desktop)</td>
-                                            <td>Win XP</td>
-                                            <td>141049904104047777</td>
-                                            <td>19978672511</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>7</td>
-                                            <td>Firefox 1.0</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                            <td>141841004104047777</td>
-                                            <td>18878672091</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>8</td>
-                                            <td>Firefox 1.5</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                            <td>141041004104046477</td>
-                                            <td>18878672512</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>9</td>
-                                            <td>Firefox 2.0</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                            <td>141041554104047777</td>
-                                            <td>18878602511</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>10</td>
-                                            <td>Firefox 3.0</td>
-                                            <td>Win 2k+ / OSX.3+</td>
-                                            <td>141041004188047777</td>
-                                            <td>18878671211</td>
-      
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>11</td>
-                                            <td>Camino 1.0</td>
-                                            <td>OSX.2+</td>
-                                            <td>141041123104047777</td>
-                                            <td>18879002511</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>12</td>
-                                            <td>Camino 1.5</td>
-                                            <td>OSX.3+</td>
-                                            <td>141131004104047777</td>
-                                            <td>10078672511</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>13</td>
-                                            <td>Netscape 7.2</td>
-                                            <td>Win 95+ / Mac OS 8.6-9.2</td>
-                                            <td>141052004104047777</td>
-                                            <td>18008672511</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>14</td>
-                                            <td>Netscape Browser 8</td>
-                                            <td>Win 98SE+</td>
-                                            <td>141041004123047777</td>
-                                            <td>18878609811</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>15</td>
-                                            <td>Netscape Navigator 9</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                            <td>141041119874047777</td>
-                                            <td>18878543511</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>16</td>
-                                            <td>Mozilla 1.0</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td>141041037704047777</td>
-                                            <td>18878670867</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>17</td>
-                                            <td>Mozilla 1.1</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td>142321004104047777</td>
-                                            <td>18870982511</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>18</td>
-                                            <td>Mozilla 1.2</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td>141041004104047777</td>
-                                            <td>18878672511</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>19</td>
-                                            <td>Mozilla 1.3</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td>141041004156047777</td>
-                                            <td>18878882511</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>20</td>
-                                            <td>Mozilla 1.4</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td>141013004104047777</td>
-                                            <td>18878542511</td>
-                                        </tr>
+                                    
+                                    	<c:forEach items="${requestScope.userList}" 
+                                         step="1" varStatus="i" var="item" >
+                                        	
+                                        	<tr>
+              									<td>${i.index + 1}</td>
+              									<td>${item.getUsername()}</td>
+              									<td>${item.getName()}</td>
+              									<td>${item.getIdnumber()}</td>
+              									<td>${item.getTelno()}</td>
+          									</tr>
+          									
+                                        </c:forEach>
                                         
-                                           
-                                            
-                                        
-                                        
-                                        
-                                        
-                                     
                                     </tbody>
                                 </table>
                             </div>

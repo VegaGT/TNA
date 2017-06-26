@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3.dtd">
+<mapper namespace="com.oracle.tna.admin.dao.AdminScoreListMapper">
+
+	<select id="select" resultType="admin_scoreList">
+		select * 
+		from admin_scoreList
+		order by data
+	</select>
+
+</mapper>

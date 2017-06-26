@@ -49,11 +49,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         <a  href="admin/main.jsp"><i class="fa fa-desktop"></i> 首页</a>
                     </li>
                     <li>
-                        <a href="admin/userList.jsp"><i class="fa fa-user"></i> 用户列表</a>
+                        <a href="showUserList.do"><i class="fa fa-user"></i> 用户列表</a>
                     </li> 
 					 
 					 <li>
-                        <a href="admin/scoreList.jsp"><i class="fa fa-pencil"></i> 考试记录</a>
+                        <a href="showAdminScoreList.do"><i class="fa fa-pencil"></i> 考试记录</a>
                         
 						</li>	
 							

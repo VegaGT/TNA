@@ -5,11 +5,11 @@
 
 <configuration>
 
-
     <typeAliases>
         <typeAlias alias="user" type="com.oracle.tna.domain.User" />
         <typeAlias alias="score" type="com.oracle.tna.domain.Score" />
         <typeAlias alias="item" type="com.oracle.tna.domain.Item" />
+        <typeAlias alias="admin_scoreList" type="com.oracle.tna.domain.ScoreListItem" />
     </typeAliases>
 
     <environments default="simple">
@@ -28,5 +28,9 @@
         <mapper resource="com/oracle/tna/user/dao/LoginMapper.xml" />
         <mapper resource="com/oracle/tna/user/dao/RegistrationMapper.xml" />
         <mapper resource="com/oracle/tna/user/dao/ScoreListMapper.xml" />
+        <mapper resource="com/oracle/tna/admin/dao/UserListMapper.xml" />
+        <mapper resource="com/oracle/tna/admin/dao/AdminScoreListMapper.xml" />
+        <mapper resource="com/oracle/tna/user/dao/ModifyInfoMapper.xml" />
     </mappers>
+    
 </configuration>

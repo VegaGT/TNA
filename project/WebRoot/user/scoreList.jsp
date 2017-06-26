@@ -63,7 +63,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</li>	
 							
                     <li>
-                        <a class="active-menu" href="user/scoreList.jsp"><i class="fa fa-list"></i> 考试记录</a>
+                        <a class="active-menu" href="showScoreList.do"><i class="fa fa-list"></i> 考试记录</a>
                     </li>
                   
                 </ul>
@@ -98,11 +98,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     </thead>
                                     <tbody>
                                                 
-                                        <c:forEach  begin="1" end="${requestScope.count}" items="${requestScope.scoreList}" 
+                                        <c:forEach items="${requestScope.scoreList}" 
                                          step="1" varStatus="i" var="item" >
                                         	
                                         	<tr>
-              									<td>${i.index}</td>
+              									<td>${i.index + 1}</td>
               									<td>${item.getData()}</td>
               									<td>${item.getScore()}</td>
           									</tr>
