@@ -31,6 +31,7 @@
         <mapper resource="com/oracle/tna/admin/dao/UserListMapper.xml" />
         <mapper resource="com/oracle/tna/admin/dao/AdminScoreListMapper.xml" />
         <mapper resource="com/oracle/tna/user/dao/ModifyInfoMapper.xml" />
+        <mapper resource="com/oracle/tna/admin/dao/ItemMapper.xml" />
     </mappers>
     
 </configuration>

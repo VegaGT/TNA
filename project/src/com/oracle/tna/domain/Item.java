@@ -25,6 +25,8 @@ public class Item {
 		this.option_d = option_d;
 		this.answer = answer;
 	}
+	
+
 
 	public int getQid() {
 		return qid;

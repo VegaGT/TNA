@@ -89,34 +89,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     </div>
                                 </div>
                                 <div class="panel-body">
-                                    <form>
+                                    <form action="addItem" method="post">
                                         <div class="form-group">
                                             <label for="Inputmain">题干信息</label>
-                                            <input type="test" class="form-control"  >
+                                            <input type="test" class="form-control"  name="question">
                                         </div>
                                         <div class="form-group">
                                             <label for="InputOption1">选项A</label>
-                                            <input type="option1" class="form-control"  >
+                                            <input type="option1" class="form-control"  name="option_a">
                                         </div>
                                         <div class="form-group">
                                             <label for="InputOption2">选项B</label>
-                                            <input type="option1" class="form-control"  >
+                                            <input type="option1" class="form-control"  name="option_b">
                                         </div>
                                         <div class="form-group">
                                             <label for="InputOption3">选项C</label>
-                                            <input type="option1" class="form-control"  >
+                                            <input type="option1" class="form-control"  name="option_c">
                                         </div>
                                         <div class="form-group">
                                             <label for="InputOption4">选项D</label>
-                                            <input type="option1" class="form-control"  >
+                                            <input type="option1" class="form-control"  name="option_d">
                                         </div>
                                         <div class="form-group">
-                                            <label for="InputOption">正确选项</label>
-                                            <input type="option1" class="form-control"  >
+                                        	<label for="InputOption">正确选项</label><br/>
+                                           	<input type="radio" name="answer" value="A" /> A
+											<input type="radio" name="answer" value="B" style="margin-left:5px" /> B
+											<input type="radio" name="answer" value="C" style="margin-left:5px"/> C
+											<input type="radio" name="answer" value="D" style="margin-left:5px"/> D
                                         </div>
-                                        
                                         <button type="submit" class="btn btn-default">确认添加</button>
-                                        <button type="reset" class="btn btn-default" align="right">重置</button>
+                                        <button type="reset" class="btn btn-default" >重置</button>
                                     </form>
                                 </div>
                             </div>

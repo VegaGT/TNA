@@ -2,13 +2,17 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
 %>
+
+
 
 <!DOCTYPE html>
 <html>
   <head>
     <base href="<%=basePath%>">  
     <title>My JSP 'main.jsp' starting page</title>
+
 	<!-- Bootstrap Styles-->
     <link href="css/bootstrap.css" rel="stylesheet">
      <!-- FontAwesome Styles-->
@@ -22,6 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
 </head>
 <body>
+ 
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
                  <div class="navbar-header">
@@ -83,34 +88,38 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     </div>
                                 </div>
                                 <div class="panel-body">
-                                    <form>
+                                    <form action="updateItem" method="post">
+                                    	<input type="hidden" name="qid" value="${param.qid} ">
                                         <div class="form-group">
                                             <label for="Inputmain">题干信息</label>
-                                            <input type="test" class="form-control"  value="1. JDK的构成中不包含以下哪个部分？ ">
+                                            <input type="text" name="question" class="form-control"  value="${param.question} ">
                                         </div>
                                         <div class="form-group">
                                             <label for="InputOption1">选项A</label>
-                                            <input type="option1" class="form-control"  value="A. Java编程语言">
+                                            <input type="text" name="option_a" class="form-control"  value="${param.option_a}">
                                         </div>
                                         <div class="form-group">
                                             <label for="InputOption2">选项B</label>
-                                            <input type="option1" class="form-control"  value="B. 工具及工具的API">
+                                            <input type="text" name="option_b" class="form-control"  value="${param.option_b}">
                                         </div>
                                         <div class="form-group">
                                             <label for="InputOption3">选项C</label>
-                                            <input type="option1" class="form-control"  value="C. Java EE扩展API">
+                                            <input type="text" name="option_c" class="form-control"  value="${param.option_c}">
                                         </div>
                                         <div class="form-group">
                                             <label for="InputOption4">选项D</label>
-                                            <input type="option1" class="form-control"  value="D. Java平台虚拟机">
+                                            <input type="text" name="option_d" class="form-control"  value="${param.option_d}">
                                         </div>
                                         <div class="form-group">
                                             <label for="InputOption">正确选项</label>
-                                            <input type="option1" class="form-control"  value="C">
+                                            <input type="radio" name="answer" value="A" /> A
+											<input type="radio" name="answer" value="B" style="margin-left:5px" /> B
+											<input type="radio" name="answer" value="C" style="margin-left:5px"/> C
+											<input type="radio" name="answer" value="D" style="margin-left:5px"/> D
                                         </div>
                                         
                                         <button type="submit" class="btn btn-default">确认修改</button>
-                                        <button type="reset" class="btn btn-default" align="right">重置</button>
+                                        <button type="reset" class="btn btn-default">重置</button>
                                     </form>
                                 </div>
                             </div>
@@ -127,6 +136,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
+<script  type="text/javascript">  
+    var selects = document.getElementsByName("answer");  
+	var ans = '<%=request.getParameter("answer")%>' ;
+    for(var i=0; i<selects.length; i++)
+    {  
+    	
+        if (selects[i].value == ans) 
+        {  
+            selects[i].checked= true;  
+            break;  
+        }  
+    }  
+</script> 
     <!-- jQuery Js -->
     <script src="assets/js/jquery-1.10.2.js"></script>
       <!-- Bootstrap Js -->
