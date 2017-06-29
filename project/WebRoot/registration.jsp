@@ -4,12 +4,37 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
+
 <!DOCTYPE html">
 <html>
   <head>
+  
     <base href="<%=basePath%>">
     
     <title>My JSP 'login.jsp' starting page</title>
+ <style type="text/css">
+.mybtn {
+	font-size: 17px;
+	line-height: 20px;
+	color: white;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	border-bottom: 0px;
+	background-color: transparent;
+}
+
+.myinput
+{
+	border-radius: 0;
+	border: solid 1px #dadada;
+	background-color: #fff;
+	color: #333;
+	font-size: 1.2em;
+	height: 55px;
+}
+
+</style>
     
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
@@ -81,14 +106,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</div>
 							<div class="form-group">
 								<input class="form-control input-lg" name="idno" value="${param.idno}" type="text" maxlength="18"
-								onKeypress="if(event.keyCode<48||event.keyCode>57)event.returnValue=false;" placeholder="身份证号" required>
+								onKeypress="if(event.keyCode<48||event.keyCode>57)event.returnValue=false;"
+								onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"
+								 placeholder="身份证号" required>
 							</div>
 							<div class="form-group">
 								<input class="form-control input-lg" name="phone" value="${param.phone}" type="text" maxlength="11"
-								onKeypress="if(event.keyCode<48||event.keyCode>57)event.returnValue=false;" placeholder="联系电话" required>
+								onKeypress="if(event.keyCode<48||event.keyCode>57)event.returnValue=false;" 
+								onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"
+								placeholder="联系电话" required>
 								<div class="tip">${phoneE}</div>
 							</div>
-							<div class="form-group last">
+							<div class="form-group">
+										<input class="" name="rand" placeholder="验证码" maxlength="4" style="width:150px" 
+										onKeyPress="if(event.keyCode<48||(event.keyCode>57&&event.keyCode<65)
+													||(event.keyCode>90&&event.keyCode<97)
+													||event.keyCode>122)event.returnValue=false;" 
+													onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" onafterpaste="value=value.replace(/[^\w\.\/]/ig,'')"
+													required>
+										<img id="code" src="dlimage.jsp" /> 
+										<button class="mybtn" onclick="var dt=new Date();document.getElementById('code').src='dlimage.jsp?dt='+dt;"
+										><u >看不清,换一张</u></button>
+									<div class="tip">${randE}</div>
+									</div>
+								<div class="form-group last">
 								<input type="submit" class="btn" value="注册">
 							</div>
 							<p></p>

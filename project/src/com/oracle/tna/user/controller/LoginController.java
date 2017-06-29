@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,22 +25,31 @@ public class LoginController {
 	
 	@RequestMapping("/login.do")
 	public String login(Model model, HttpSession session,
-			String username, String password){
+			String username, String password,String rand){
 		User user = loginService.getUser(username, password);
 		//ï¿½ï¿½Â¼Ê§ï¿½ï¿½
 		if(user == null){
 
-			model.addAttribute("uError", "ÓÃ»§Ãû²»´æÔÚ");
+			model.addAttribute("uError", "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 
 			return "login";
 		}
 		if(!user.getPassword().equals(password))
 		{
 
-			model.addAttribute("pError", "ÃÜÂë²»ÕıÈ·");
+			model.addAttribute("pError", "ï¿½ï¿½ï¿½ë²»ï¿½ï¿½È·");
 
 			return "login";
 		}
+		String sRand=(String)session.getAttribute("rand");
+		sRand=sRand.toLowerCase();
+		rand=rand.toLowerCase();
+		if(!sRand.equals(rand))
+		{
+			model.addAttribute("randE", "éªŒè¯ç æœ‰è¯¯");
+			return "login";
+		}
+		
 		
 		else {
 			session.setAttribute("user", user);

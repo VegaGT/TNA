@@ -107,6 +107,7 @@ a:hover {
 	color: #f36a5a;
 	border-radius: 100px;
 }
+
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
 	border: 2px solid #f36a5a;
 	background: #f36a5a;

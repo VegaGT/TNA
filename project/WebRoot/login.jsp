@@ -10,6 +10,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>My JSP 'login.jsp' starting page</title>
+     <style type="text/css">
+.mybtn {
+	font-size: 17px;
+	line-height: 20px;
+	color: white;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	border-bottom: 0px;
+	background-color: transparent;
+}
+
+.myinput
+{
+	border-radius: 0;
+	border: solid 1px #dadada;
+	background-color: #fff;
+	color: #333;
+	font-size: 1.2em;
+	height: 55px;
+}
+
+</style>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -75,6 +98,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<input class="form-control input-lg" name="password" id="email" type="password" placeholder="密码" required>
 								<div class="tip">${pError}</div>
 							</div>
+							<div class="form-group">
+										<input class="" name="rand" placeholder="验证码" maxlength="4" style="width:150px" 
+										onKeyPress="if(event.keyCode<48||(event.keyCode>57&&event.keyCode<65)
+													||(event.keyCode>90&&event.keyCode<97)
+													||event.keyCode>122)event.returnValue=false;" 
+													onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" onafterpaste="value=value.replace(/[^\w\.\/]/ig,'')"
+													required>
+										<img id="code" src="dlimage.jsp" /> 
+										<button class="mybtn" onclick="var dt=new Date();document.getElementById('code').src='dlimage.jsp?dt='+dt;"
+										><u >看不清,换一张</u></button>
+									<div class="tip">${randE}</div>
+									</div>
 							<div class="form-group last">
 								<input type="submit" class="btn" value="登录">
 							</div>

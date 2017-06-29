@@ -23,28 +23,37 @@ public RegistrationService registrationService = RegistrationService.getRegistra
 	//Map<String, String> errors=new HashMap<String, String>();
 	@RequestMapping("registration.do")
 	public String register(Model model,String username,String password,HttpSession session,
-			String okpassword,String phone,String name,String idno){
+			String okpassword,String phone,String name,String idno,String rand){
 		if(!registrationService.userIsExisted(username))
 		{
-			model.addAttribute("usernameE","ÓÃ»§ÃûÒÑ¸ü¸Ä");
+			model.addAttribute("usernameE","ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ñ¸ï¿½ï¿½");
 			return "registration";
 			
 		}
 		if(password.length()<6)
 		{
-			model.addAttribute("passwordE","ÃÜÂë²»ÄÜÉÙÓÚ6Î»");
+			model.addAttribute("passwordE","ï¿½ï¿½ï¿½ë²»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½6Î»");
 			return "registration";
 		}
 		if(!okpassword.equals(password))
 		{
-			model.addAttribute("okE", "ÓëÔ­ÃÜÂë²»Í¬");
+			model.addAttribute("okE", "ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ë²»Í¬");
 			return "registration";
 		}
 		if(!utils.isMobileNO(phone))
 		{
-			model.addAttribute("phoneE", "ÇëÊäÈëÕýÈ·µÄÊÖ»úºÅ");
+			model.addAttribute("phoneE", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½Ö»ï¿½ï¿½");
 			return "registration";
 		}
+		String sRand=(String)session.getAttribute("rand");
+		sRand=sRand.toLowerCase();
+		rand=rand.toLowerCase();
+		if(!sRand.equals(rand))
+		{
+			model.addAttribute("randE", "éªŒè¯ç æœ‰è¯¯");
+			return "registration";
+		}
+		
 		
 		User user=new User(-1,username,password,name,idno,phone, 0);
 	//	System.out.println(idno+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
