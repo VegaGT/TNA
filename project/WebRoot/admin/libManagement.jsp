@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 	String path = request.getContextPath();
@@ -66,6 +66,7 @@
 				<li><a href="login.jsp"><i class="fa fa-power-off"></i>&nbsp;&nbsp;&nbsp;&nbsp;</a>
 				</li>
 			</ul>
+
 		</nav>
 		<!--/. NAV TOP  -->
 		<nav class="navbar-default navbar-side" role="navigation">
@@ -74,10 +75,10 @@
 
 					<li><a href="admin/main.jsp"><i class="fa fa-desktop"></i>
 							首页</a></li>
-					<li><a href="admin/userList.jsp"><i class="fa fa-user"></i>
+					<li><a href="showUserList.do"><i class="fa fa-user"></i>
 							用户列表</a></li>
 
-					<li><a href="admin/scoreList.jsp"><i class="fa fa-pencil"></i>
+					<li><a href="showAdminScoreList.do"><i class="fa fa-pencil"></i>
 							考试记录</a></li>
 
 					<li><a class="active-menu" href="admin/libManagement.jsp"><i
@@ -102,6 +103,7 @@
 							<button type="add" class="btn btn-default">
 								<a href='admin/addItem.jsp'>添加试题</a>
 							</button>
+
 							<div class="panel-body">
 
 
